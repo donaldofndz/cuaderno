@@ -1,0 +1,115 @@
+<!--
+
+	- Agregar tipografia 
+	- Cambiar color (Aunque es dinamico no hay problema)
+	- Agregar punttios a las listas
+	
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<div class="row">
+			<div class="twelve columns">
+				<div class="description">
+					<h3><span class="specialCaracters"><</span><span id="name">asd</span><span class="specialCaracters">></span></h3>
+				</div>	
+			</div>
+		</div>
+		<!-- Espacio especial para about -->
+		<div class="row">
+		    <div class="twelve columns">
+				<div class="text-blocks">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta non maiores, reprehenderit ea vitae necessitatibus pariatur exercitationem ex laborum accusamus itaque ad porro odit iure cupiditate ab, labore alias quo!
+				</div>
+		    </div> 
+		</div>
+
+		<!-- Espacio especial para proyectos -->
+		<div class="row">
+			<div class="twelve columns">
+				<div class="description">
+					<h5><span class="specialCaracters"><</span><span id="subtitulo1">asd</span><span class="specialCaracters">></span></h5>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+		    <div class="twelve columns">
+				<div class="text-blocks">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta non maiores, reprehenderit ea vitae necessitatibus pariatur exercitationem ex laborum accusamus itaque ad porro odit iure cupiditate ab, labore alias quo!
+				</div>
+		    </div> 
+		</div>
+		<div class="row">
+		    <div class="twelve columns">
+				<div class="text-blocks">
+					<ul>
+						<li><a href="">Primer articulo</a></li>
+						<li><a href="">Segundo articulo</a></li>
+						<li><a href="">Tercer articulo</a></li>
+						<li><a href="">Cuarto articulo</a></li>
+					</ul>
+				</div>
+		    </div> 
+		</div>
+
+		<!-- Espacio especial para articulos -->
+		<div class="row">
+			<div class="twelve columns">
+				<div class="description">
+					<h5><span class="specialCaracters"><</span><span id="subtitulo2">asd</span><span class="specialCaracters">></span></h5>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+		    <div class="twelve columns">
+				<div class="text-blocks">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta non maiores, reprehenderit ea vitae necessitatibus pariatur exercitationem ex laborum accusamus itaque ad porro odit iure cupiditate ab, labore alias quo!
+				</div>
+		    </div> 
+		</div>
+		<div class="row">
+		    <div class="twelve columns">
+				<div class="text-blocks">
+					<ul>
+						<li><a href="">Primer articulo</a></li>
+						<li><a href="">Segundo articulo</a></li>
+						<li><a href="">Tercer articulo</a></li>
+						<li><a href="">Cuarto articulo</a></li>
+					</ul>
+				</div>
+		    </div> 
+		</div>
+
+
+
+	</div>	
+</body>
+
+	<script>
+
+		function myFunction() {
+			document.title = "test"
+		    var elements = document.getElementById("name");
+		    elements.innerHTML = "Este es un titulo	"; // ---> tiene que ser asi por que es 
+
+			var elements = document.getElementById("subtitulo1");
+		    elements.innerHTML = "Este es un subtitulo"; // ---> tiene que ser asi por que es 
+
+			var elements = document.getElementById("subtitulo2");
+		    elements.innerHTML = "Este es otro subtitulo"; // ---> tiene que ser asi por que es 
+		}
+
+		myFunction()
+
+	</script>
+
+</html>

@@ -1,0 +1,34 @@
+.description, .text-blocks {
+  text-align: justify;
+  /*Tambien podria ser Justify*/
+  font-size: 1.1em;
+  margin-top: 10%;
+}
+
+body {
+  margin-top: 12%;
+  margin-bottom: 12%;
+  background-color: #fafafa;
+  margin-right: 20%;
+  margin-left: 20%;
+  color: #616161;
+}
+
+.specialCaracters {
+  color: #3d66d3;
+}
+
+.text-blocks ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.text-blocks li {
+  display: block;
+}
+.text-blocks a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #3d66d3;
+}

@@ -1,0 +1,474 @@
+CUADERNO DE APUNTES DE C++ 
+
+-------------- 1. CPP --------------
+
+Libreria principal para C++
+	
+	#include <iostream>
+
+Para poder imprimir algun valor en pantalla se utiliza esta notacion 
+
+	cout << 
+
+
+=============================================
+
+Dentro de C++ se tienen los siguientes elementos que definen al lenguaje de cierto modo: 
+
+	- Object: Los objetos son elementos que se abstraen de la realidad y se componene de los siguientes elementos:
+
+		* Estados (Atributos) : Un estado es un elemento definido (variable)
+
+		* Comportamientos (Metodos) : Una accion que puede realizar el elemento (funcion)
+
+	- Class: Una clase es una plantilla para un objeto, describe sus estados y comportamientos
+
+	- Methods: Es una accion realizada por un objeto, una clase puede contener varios metodos, la logica se lleva acabo en los metodos
+
+	- Instance Variables. Cada objeto tiene un set de variables 
+
+
+==========================================================================================
+
+Un tipico programa de C++ esta compuesto de los siguientes elementos: 
+
+# include <iostream>							// Esta es la forma en la que se hace referencia a una libreria que contiene informacion necesaria para el uso del programa
+using namespace std;							// Indica al compilador el uso del std namespace
+
+int main(){										// Es la funcion inicial, debe ser parte de cada programa
+	cout << "Hola Mundo!"						// cout es parte de la libreria iostream  y muestra un mensaje 
+	return 0;									// El valor de regreso de una funcion que indica que una funcion fue bien terminada
+}
+
+
+==========================================================================================
+
+Dentro de C++ algo basico dentro del lenguaje: 
+
+	- Notacion fin de linea: Al final de cada instrucción se agrega un "punto y coma" esta instruccion denota el final de la misma 
+
+	- Bloque: es un conjunto de sentencias logicamente conectadas un bloque se delimita por { bloque }
+
+	- Identificadores: Un identificador en C++ es aquel nombre que usamos para identificar una variable, funcion, clase o modulo
+		debe iniciar con letra o guion bajo, puede seguir con numero, pero no se usan caracteres especiales 
+
+	- Las siguientes palabras reservadas no pueden usarse como identificadores: 
+
+			asm 	else 	new 	this
+		auto 	enum 	operator 	throw
+		bool 	explicit 	private 	true
+		break 	export 	protected 	try
+		case 	extern 	public 	typedef
+		catch 	false 	register 	typeid
+		char 	float 	reinterpret_cast 	typename
+		class 	for 	return 	union
+		const 	friend 	short 	unsigned
+		const_cast 	goto 	signed 	using
+		continue 	if 	sizeof 	virtual
+		default 	inline 	static 	void
+		delete 	int 	static_cast 	volatile
+		do 	long 	struct 	wchar_t
+		double 	mutable 	switch 	while
+		dynamic_cast 	namespace 	template 	
+
+
+==========================================================================================
+
+En C++ se pueden usar la siguiente sintaxis para crear comentarios: 
+
+	- // Para hacer el comentario de una sola linea 
+	- /*	CODIGO	*/ Para hacer comentarios de multiples lineas 
+
+==========================================================================================
+
+En C++ como en todos los lenguajes de programacion se hace uso de variables y dentro de las variables existen de distintos tipos:
+
+	-boolean					bool
+	-character					char 
+	-integer 					int 
+	-floating point				float
+	-Double floating point		double
+	-Valueless 					void 
+	-wide character				wchar_t
+
+Dentro de las variables existe 4 modificadores para cada tipo de variable: 
+
+	- signed 
+	- unsigned 
+	- short
+	- long 
+
+También existen las declraciones typedef, donde un identificador remplaza el nombre del tipo de variable: 
+
+	typedef type name;
+	typedef int numero;
+
+
+==========================================================================================
+
+Las variables en c++ son espacios de memoria que podemos manipular mediante un nombre.
+
+Las variables pueden ser declaradas de los siguientes modos: 
+
+	- int i;
+	- int i,j,k;
+	- int i = 3;
+	- int i = 3, j = 5;
+	- char = 'z' 
+
+Las variables definidas de forma estatica estan inicializadas con cero (gloables), el resto de las varibles es almacenado
+con valores indefinidos 
+
+==========================================================================================
+
+La declaracion de las funciones a utilizarse en un archivo deben hacerse al inicio de una funcion,
+en caso de no hacerlo no se genera una error, sin embargo se generará un warning;
+
+==========================================================================================
+
+Scope variables C++ 
+
+El scope es el rango en el que una variable es utilizable, existe tren rangos
+	
+	- Dentro de una funcion o bloque, donde será considerada variable local y solo podrá ser utilizada en la misma region
+
+	- En la definicion de una funcion, se llaman parametros formales y son usados dentro de una funcion, sin embargo
+		el valor se obtiene al invocar la funcion 
+
+	- Fuera de toda funcion, se considerará una variable global 
+
+
+	#include <iostream>
+	using namespace std;
+
+	//variable glo
+	int i,j;
+
+	int main(){
+		
+		//variable local 
+		int i,j;
+
+	}
+
+==========================================================================================
+
+Dentro del lenguaje de programacion C++ existe el concepto de literal
+
+Existe las valores literales que utilizan estos prefijos: 
+
+	- 0 para Octal
+	- 0x para hexadecimal 
+	- nada para decimal 
+
+y los siguientes sufijos: 
+
+	- u para unsigned 
+	- l para long 
+	- ul para unsigned long 
+
+
+
+Dentro de los literales esta la definición de constatentes: 
+
+Una constalte es una variable a la cual nunca se le cambia el valor, se declaran del siguiente modo: 
+
+	#include <iostream> 
+	using namespace std;
+
+	#define LEN 10;
+	#define WID 5;
+
+	int main(){
+		int area;
+
+		area = LEN * WID;
+
+		cout << area;
+	}
+
+Las variables constantes tambien pueden ser definidas con tipo del siguiente modo:
+
+	const int LEN = 10;
+
+
+==========================================================================================
+
+STORAGE CLASSES 
+
+Define el scope y vida de variables y funciones, las storage classes que logran este cometido son las siguientes; 
+
+	- auto 	//esta es la opcion automatica para todas las variables
+
+	- register //indica que una variable debe ser guardad en disco en vez de RAM, se recomienda para variables 
+		de rapido acceso
+
+	- static // guardar una instancia creada en vez de crear y destruir, mantiene valores entre llamadas a funcion 
+
+	- extern //Esta variable es usadad para para referenciar una variable global en todos los archivos 
+
+	- mutable //Solo aplica a objetos, un miembro del objeto sobreescriba un miembro constante de la funcion
+
+==========================================================================================
+
+OPERATORS
+
+Los clasicos con las mismas operacioens y funciones de siempre: 
+
+	+			suma
+	-			resta
+	/			division
+	*			*
+	%			residuo
+	++			auto suma unaria
+	--			auto resta unaria 
+
+
+OPERADORES REALCIONALES	
+
+	==			comparador igualdad
+	!=			comparador diferencia
+	>			comparador mayor que 
+	<			comparador menor que 
+	<=			comparador menor o igual que 
+	>= 			comparador mayor o igual que 
+
+OPERADORES LOGICOS 
+
+	&&			AND
+	|| 			OR
+	!			NOT
+
+OPERADORES A NIVEL DE BIT
+
+	&			AND LOGICO 	(1 cuando todos son uno, 0 cuando existe un 0)
+	|			OR LOGICO 	(1 cuando existe un uno, 0 cuando no existen 1)
+	^			XOR LOGICO  (1 cuando son disparejos, 0 cuando son iguales)
+	~			BINARY ONES	(Hace una inversion de bits)
+	<< X		BINARY LEFT SHIFT OPERATOR: Este valor mueve a la izquierda el numero de bits especificados por el operador
+	X >>		BINARY RIGHT SHIFT OPERATOR: Este valor se mueve a la derecha el numero de bits especificador por el operador 
+
+OPERADORES DE ASIGNACION 
+
+	= 			ASIGNACION 
+	+= 			SUMA Y ASIGNACION
+	-= 			RESTA Y ASIGNACION
+	*=			MULTIPLICACION Y ASIGNACION
+	/= 			DIVISION Y ASIGNACION
+	%=			MODULO Y ASIGNACION
+	<<=			LEFT SHIFT Y ASIGNACION 
+	>>= 		RIGHT SHIFT Y ASIGNACION
+	&=			AND Y ASIGNACION
+	^=			XOR y ASIGNACION
+	|= 			OR  y ASIGNACION
+
+MISC OPERATORS 
+
+	sizeof()					Esta funcion devuelve el tamaño de una variable (en bits)
+	CONDITION ? X : Y 			Si la condicion es TRUE regresa el valor de X de otro modo Y 
+	. AND ->					Hacen referencia a a clases, estructuras o uniones 
+	valor ()					Convierte un tipo de dato en otro   EJEJMPLO: (int) valor
+	& 							POINTER OPERATOR, regresa la direccion de la variable 
+	*							POINTER OPERATOR, Es el puntero a una variable 
+
+ADDRESS OF OPERATOR 
+
+	int myvar = 25;
+	
+	//se guarda la direccion de memoria
+
+	foo = &myvar;
+
+	//se guarda el contenido de myvar
+
+	bar = myvar;
+
+DEREFERENCE OPERATOR
+
+	baz = *bar:
+
+	//bar esta guardando el valor de memoria, con el operador dereferencia se puede acceder al valor 
+		de la direccion de memoria 
+
+DECLARING POINTERS 
+
+	EL TIPO DE DATOS DEL APUNTADOR ES EL TIPO DE DATO AL QUE VA A APUNTAR
+
+	int * number;
+	char * character 
+	double * decimals;
+	
+
+==========================================================================================
+
+	LOOP TYPES
+
+		while loop 
+		for loop
+		do..while loop
+		nested loops 
+
+	LOOP CONTROL STATEMENTS 
+
+		break
+		continue
+		goto
+
+
+==========================================================================================
+
+	DECISION MAKING
+
+	IF
+	IF...ELSE
+	SWITCH 
+	NESTED IF 
+	NESTED SWITCH
+
+
+==========================================================================================
+
+	DEFINING A FUNCTION 
+
+	return_type function_name (parameter_list){
+
+		body_of_the_function
+
+	}
+
+	return_type					es el tipo de dato que regresa una funcion en su sentencia return
+	function_name 				es el identificador de una funcion 
+	parameter_list 				son los parametros a ser utilizados por parte de la funcion
+	parameter_list_elementer: 
+
+		a) data_type name
+
+	body_of_the_function 		contiene las operaciones de la funcion 
+
+==========================================================================================
+
+	ADDING LIBRARIES 
+
+	#include <cmath>
+		funcion para operaciones matematicas 
+
+	#include <cstdlib>
+
+
+==========================================================================================
+
+C++ nos da la facilidad de almacenar datos por medio de una estructura de datos llamada Array, 
+
+	Se declaran de la siguientes manera: 
+
+	type arrayName [arraySize];
+
+==========================================================================================
+
+C++ nos da la facildiad de declarar strings de las siguientes formas: 
+
+	- char cadena[] = "Hello";
+	- char cadena[6] = {'H','e','l','l','o'}   <---- array de valores se declaran asi 
+	- string valor = "Hello"
+
+
+Para el maneejor de strings usamos la libreria #include <string> y tendremos la capacidad de 
+usar las siguientes funciones 
+
+	strcpy()	copia cadenas
+	strcat()	concatena cadenas
+	strlen()	Se obtiene la longitud de una cadena 
+	strcmp()	compara dos cadenas 
+	strchr()	regresa un puntero a la primer ocurrencia del caracter
+	strstr()	
+
+
+==========================================================================================
+
+STRUCTURES 
+
+Las estructuras al igual que en C son un tipo de datos que almacena distintos tipos de datos, 
+el metodo de acceso que utilizan es por medio del (.) 
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} book;  <----- Este es el nombre de la variable 
+
+------------------------------------------------------------------------------------------
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
+
+
+int main() {
+
+   struct Books Book1;        // Declare Book1 of type Book
+   struct Books Book2;        // Declare Book2 of type Book
+ 
+   // book 1 specification
+   strcpy( Book1.title, "Learn C++ Programming");
+   strcpy( Book1.author, "Chand Miyan"); 
+   strcpy( Book1.subject, "C++ Programming");
+   Book1.book_id = 6495407;
+
+   // book 2 specification
+   strcpy( Book2.title, "Telecom Billing");
+   strcpy( Book2.author, "Yakit Singha");
+   strcpy( Book2.subject, "Telecom");
+   Book2.book_id = 6495700;
+ 
+   // Print Book1 info
+   cout << "Book 1 title : " << Book1.title <<endl;
+   cout << "Book 1 author : " << Book1.author <<endl;
+   cout << "Book 1 subject : " << Book1.subject <<endl;
+   cout << "Book 1 id : " << Book1.book_id <<endl;
+
+   // Print Book2 info
+   cout << "Book 2 title : " << Book2.title <<endl;
+   cout << "Book 2 author : " << Book2.author <<endl;
+   cout << "Book 2 subject : " << Book2.subject <<endl;
+   cout << "Book 2 id : " << Book2.book_id <<endl;
+
+   return 0;
+}
+
+------------------------------------------------------------------------------------------
+
+Se puede pasar una estructura a una funcion del siguiente modo: 
+
+void printBook(struct Books book);
+
+
+
+==========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
